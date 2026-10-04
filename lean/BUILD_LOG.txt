@@ -1,0 +1,18 @@
+# Standalone build of the MuPi project (lean/), 2026-10-03 12:29
+# toolchain: leanprover/lean4:v4.30.0
+
+$ lake build
+Build completed successfully (8496 jobs).
+
+$ lake env lean Check.lean
+PiMeasure.pi_irrationality_exponent : Tendsto (fun x => Chebyshev.theta x / x) atTop (𝓝 1) →
+  ∀ (μ : ℝ), 6.0446 < μ → PiMeasure.ExponentLE Real.pi μ
+def PiMeasure.ExponentLE : ℝ → ℝ → Prop :=
+fun θ μ => ∃ b₀, ∀ (b : ℕ), b₀ ≤ b → ∀ (a : ℤ), ↑b ^ (-μ) < |θ - ↑a / ↑b|
+'PiMeasure.pi_irrationality_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PiMeasure.pi_not_liouvilleWith' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PiMeasure.theoremA' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+# source lines
+    6238 total
+# forbidden tokens (sorry / axiom / native_decide): 0
