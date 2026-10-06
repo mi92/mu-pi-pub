@@ -2,7 +2,9 @@
 
 This repository contains
 
-* `K2H_paper_v3.pdf`: the paper, with the full proof;
+* `K2H_paper_v4.pdf`: the paper, with the full proof (version 4 of 6 October 2026, 46 pages; changes since version 3 are listed
+  [below](#changes-since-version-3)). Version 3 of 3 October 2026, the first public version, remains available as
+  [`K2H_paper_v3.pdf` at commit `dc9f136`](https://github.com/mi92/mu-pi-pub/blob/dc9f136/K2H_paper_v3.pdf);
 * `lean/`: a Lean 4 / Mathlib formalisation of the proof (Lake project `MuPi`, 20 files, 6,238 lines).
 
 **Status.** The Lean proof is complete modulo the prime number theorem, which enters as an explicit
@@ -31,9 +33,9 @@ no `sorry`, no extra axioms (`#print axioms` shows `propext`, `Classical.choice`
 
 ## Modules and the corresponding sections of the paper
 
-Paths are relative to `lean/MuPi/`.
+Paths are relative to `lean/MuPi/`. Versions 3 and 4 of the paper have the same section numbering.
 
-| Lean file | content | paper (`K2H_paper_v3`) |
+| Lean file | content | paper (`K2H_paper_v4`) |
 |---|---|---|
 | `HataLemma.lean` | `exponent_le_of_forms`: Hata's measure lemma (limsup form) | §1.2, App. A.9 |
 | `K2H/Defs.lean` | definitions | §1.3 |
@@ -93,9 +95,44 @@ The expected axioms are `[propext, Classical.choice, Quot.sound]`. A recorded ru
 generator script using exact rational arithmetic. The script is not included; it is not needed to
 trust the result, since Lean checks every certificate in that file.
 
+## Changes since version 3
+
+Version 4 proves the same theorem by the same proof, with the same constants; the abstract and the section numbering are
+unchanged. The changes concern the exposition.
+
+* **Corrections.**
+  * What the Lean formalisation covers is now stated precisely (§1.5, §10.2, §10.3). The list of statements that are
+    not formalised was incomplete in version 3; for example, Lean does not state the integrality of `c_n` (it follows
+    in a few lines from proved lemmas), proves `c_1 ≥ 16` rather than `c_1 = 7345`, proves `r ≤ log f(−x)` only at
+    `x = 0.3913`, proves Lemma 8.1 only in the case that is used, does not prove formula (4.6), and proves
+    `ρ ≤ e^{−6.530134}` rather than a strict inequality. Conversely, the symmetry identity of Appendix B, described in
+    version 3 as not formalised, is proved in `lean/MuPi/K2H.lean` (`K2H_symmetry`). §10.2 now also lists the steps
+    taken from Mathlib (existence of partial fractions, Fekete's lemma, `ψ(x) − θ(x) ≤ 2√x log x`).
+  * Table 1 gives the value `13.398` stated in Hata's published 1993 paper (version 3: `13.39…`).
+  * The caption of Table 7 says exactly which rates are proved: the limit of `(1/n) log D_n` (assuming the prime number
+    theorem), and for `r` and `s` only bounds.
+  * §1.7 says that the Lean project is public (this repository).
+* **New explanations for readers who are not specialists.**
+  * §1.2: a step-by-step sketch of Hata's lemma.
+  * §1.3: why the coefficients have denominators, what the multiplier `D_n` costs, and why the "removable" primes can be
+    removed; with `lcm(1,…,4n)` alone the method would give only `6.747`.
+  * Remark 1.7: for `n = 1`, members of the family give Archimedes' `22/7` and Zu Chongzhi's `355/113`; new
+    references Dalzell (1944) and Lucas (2005).
+  * §1.4 is rewritten as a statement of the contribution, with a table of the bound for four members of the family.
+  * §4.1: where `π` comes from (the logarithm along the path of integration).
+  * Figure 2 (new): the sizes of `v_n` and `J_n` for `n ≤ 60` on a logarithmic scale.
+  * Appendix A.1: the derivation of the solved recursion, with two worked instances.
+  * Table 3: exact values with more digits.
+* **Status (§1.5, §1.7).** Records two further audits by an AI system of another provider: of version 3 together with the
+  Lean project, which found no blocking mathematical error in the proof of the main theorem, and of a first state of
+  version 4, which found no gap in that proof (its corrections of three new explanations are applied). 
+* **Removed.** Passages that repeated other parts of the paper (mostly in the appendices), and two remarks and an example
+  that the proof does not use; no step of the proof was removed.
+* **Title page.** Author and affiliation, and the dates of the first release and of this version.
+
 ## Citation
 
-If you refer to this work, please cite the paper as follows (preprint, version 3, not yet peer-reviewed):
+If you refer to this work, please cite the paper as follows (preprint, version 4, not yet peer-reviewed):
 
 ```bibtex
 @misc{moor2026mupi,
@@ -103,6 +140,6 @@ If you refer to this work, please cite the paper as follows (preprint, version 3
   title        = {A family of integrals for $\pi$ with the symmetry $z \mapsto 2/z$, and the bound $\mu(\pi) \le 6.0446$},
   year         = {2026},
   howpublished = {\url{https://github.com/mi92/mu-pi-pub}},
-  note         = {Preprint, version 3 (3 October 2026). Lean 4 formalisation included. Not peer-reviewed}
+  note         = {Preprint, version 4 (6 October 2026; first released 3 October 2026). Lean 4 formalisation included. Not peer-reviewed}
 }
 ```
