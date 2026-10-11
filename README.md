@@ -1,13 +1,20 @@
 # The irrationality exponent of π is at most 6.0446
 
+This result was largely driven by AI agents under human supervision. It was first released (preprint and lean) on October 3, 2026. 
+At that point the last peer-reviewed record of mu(pi) was 7.103.. from 2020, and the last preprinted record was 7.101.. from 2026.
+If this result passes human expert review, it will represent a significant advance as the presented approach unlocks a ~800 larger bound reduction than the last preprint before achieved, and a larger absolute reduction than the joint bound reduction of 30+ years worth of prior research. 
+(Note: On October 7, 2026, approximately 00:00 CEST, OpenAI released a preprint that claims mu(pi) = 2. All dates are using CEST.) 
+
 This repository contains
 
 * `K2H_paper_v4.pdf`: the paper, with the full proof (version 4 of 6 October 2026, 46 pages; changes since version 3 are listed
   [below](#changes-since-version-3)). Version 3 of 3 October 2026, the first public version, remains available as
   [`K2H_paper_v3.pdf` at commit `dc9f136`](https://github.com/mi92/mu-pi-pub/blob/dc9f136/K2H_paper_v3.pdf);
-* `lean/`: a Lean 4 / Mathlib formalisation of the proof (Lake project `MuPi`, 20 files, 6,238 lines).
+* `lean/`: a Lean 4 / Mathlib formalisation of the proof (Lake project `MuPi`, 20 files, 6,238 lines);
+* `scripts/`, `verify_k2h.sh`, `requirements.txt`: the Python programs that recompute every number printed in the paper
+  (exact rational arithmetic wherever possible), a one-command driver, and a recorded run `verify_k2h.log`; see `scripts/README.md`.
 
-**Status.** The Lean proof is complete modulo the prime number theorem, which enters as an explicit
+**Status.** The Lean proof is complete modulo the prime number theorem (a classical, proved result), which enters as an explicit
 hypothesis. The paper has not yet been refereed.
 
 ## Main statement (`lean/MuPi/K2H/Main.lean`)
@@ -91,9 +98,19 @@ lake env lean Check.lean  # prints the main statement, ExponentLE, and the axiom
 The expected axioms are `[propext, Classical.choice, Quot.sound]`. A recorded run is in
 `lean/BUILD_LOG.txt`.
 
-`MuPi/K2H/ContourCert.lean` (the Bernstein certificates for the contour bound) was produced by a
-generator script using exact rational arithmetic. The script is not included; it is not needed to
-trust the result, since Lean checks every certificate in that file.
+`MuPi/K2H/ContourCert.lean` (the Bernstein certificates for the contour bound) was produced by
+`scripts/lean_contour_gen.py` using exact rational arithmetic. Lean checks every certificate in that
+file, so the generator is not needed to trust the result.
+
+## Recomputing the numbers
+
+```
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+PYTHON=.venv/bin/python zsh verify_k2h.sh        # about a minute; a recorded run is in verify_k2h.log
+```
+
+`scripts/paper_v3_numbers.py` and `scripts/paper_v4_new_numbers.py` recompute every printed number independently of the
+programs that produced it and exit non-zero on a mismatch; `scripts/README.md` lists what each script checks.
 
 ## Changes since version 3
 

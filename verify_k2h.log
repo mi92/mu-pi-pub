@@ -1,0 +1,306 @@
+== 1. change-of-variable identities (symbolic) ==
+sigma identities: True True True
+W-frame: True True True True
+w-frame: [True, True, True, True]
+endpoints: w=1 -> 1 - I   w=-1 -> 1 + I   w=0 -> -sqrt(2)   w=i*eps -> 0
+c = 1+eps^2 = 2 sqrt2 eps: True   1-eps^2 = 2 eps: True   theta = (2/eps) atan(1/eps) = 3 pi/(4 eps): True
+q-frame: [True, True, True, True, True]
+critical cubic: True
+== 2. constants of the bound function: (5,3,4), (4,2,3), (46,28,37), and the Zeilberger-Zudilin point (3,3,2) ==
+K2H(5,3,4): cubic [4, 1, -88, 152]
+   r      = 10.54035511169624475180124418811001792703
+   s      = 6.530136147360159996478177120186862669664
+   C      = 3.706040100783960809766868129818693977966
+   mu     = 6.04458594096042271966390953126718667553    (without prime saving: 6.7468666762723631686 )
+K2H(4,2,3): cubic [3, 1, -66, 112]
+   r      = 7.936490818258478922598994942977131454059
+   s      = 4.994003059223300212029641560619731285667
+   C      = 2.874251687482424497819029345430941193386
+   mu     = 6.100004958063750960836094864867689921033    (without prime saving: 6.4846910929607286217 )
+K2H(46,28,37): cubic [37, 9, -814, 1408]
+   r      = 97.46700066414541224090419370174606557772
+   s      = 60.27778388342597251862703116144134485102
+   C      = 34.14939892988869084245028967466423948597
+   mu     = 6.03729563951543700446787574678243123698    (without prime saving: 6.7766238116802576746 )
+K2H(3,3,2): cubic [4, -5, -60, 120]
+   r      = 9.128987389610403703553905100685583384149
+   s      = 4.387819141320626669968761386136118030798
+   C      = 2.484902655720644501735941197982380612595
+   mu     = 7.10320533413700172750577342281275474085    (without prime saving: 34.853376460230229693 )
+== 3. first exact forms of (5,3,4) ==
+n=1: u_n = -23075/2, v_n = 7345/2; lcm(1..4) = 12, Phi_n = 1, D_n = 12;  D_n*J_n = -138450 + 44070*pi = -0.011756297812
+      den(u_n) = {2: 1}
+n=2: u_n = -4338189943/14, v_n = 197269821/2; lcm(1..8) = 840, Phi_n = 3, D_n = 280;  D_n*J_n = -86763798860 + 27617774940*pi = 0.000292740995037
+      den(u_n) = {2: 1, 7: 1}
+n=3: u_n = -11065298371140502/1155, v_n = 6099036995857/2; lcm(1..12) = 27720, Phi_n = 1, D_n = 27720;  D_n*J_n = -265567160907372048 + 84532652762578020*pi = -3.39318849007e-5
+      den(u_n) = {3: 1, 5: 1, 7: 1, 11: 1}
+n=4: u_n = -14141220324520524847492/45045, v_n = 199857486158198941/2; lcm(1..16) = 720720, Phi_n = 1, D_n = 720720;  D_n*J_n = -226259525192328397559872 + 72020643711968570378760*pi = 1.07254145382e-6
+      den(u_n) = {3: 2, 5: 1, 7: 1, 11: 1, 13: 1}
+== 4. exact forms against numerical quadrature ==
+n=1: quadrature J = -0.00097969148433174594217 (imag part 0.0),  exact u+v*pi = -0.00097969148433174594217,  relative difference 7.65e-63,  v_n = 7345/2
+n=2: quadrature J = 1.0455035537019889052e-6 (imag part 0.0),  exact u+v*pi = 1.0455035537019889052e-6,  relative difference 2.66e-63,  v_n = 197269821/2
+n=3: quadrature J = -1.2240939718877622576e-9 (imag part 0.0),  exact u+v*pi = -1.2240939718877622576e-9,  relative difference 4.57e-65,  v_n = big
+n=5: quadrature J = -1.8426340951353887893e-15 (imag part 0.0),  exact u+v*pi = -1.8426340951353887893e-15,  relative difference 1.0e-65,  v_n = big
+== 5. independent evaluation over Q(sqrt2) (w-coordinate) ==
+n=1: w-frame u rational: True, v rational: True;  u matches z-frame: True, v matches: True
+     2-adic: v(const) = -6;  v(part1) = 5, v(part2 rational) = 9, v(part2 theta-coefficient) = 7;  3m = 6;  v2(u_n) = -1, v2(v_n) = -1
+n=2: w-frame u rational: True, v rational: True;  u matches z-frame: True, v matches: True
+     2-adic: v(const) = -13;  v(part1) = 12, v(part2 rational) = 16, v(part2 theta-coefficient) = 14;  3m = 12;  v2(u_n) = -1, v2(v_n) = -1
+n=3: w-frame u rational: True, v rational: True;  u matches z-frame: True, v matches: True
+     2-adic: v(const) = -20;  v(part1) = 21, v(part2 rational) = 47/2, v(part2 theta-coefficient) = 21;  3m = 18;  v2(u_n) = 1, v2(v_n) = -1
+n=4: w-frame u rational: True, v rational: True;  u matches z-frame: True, v matches: True
+     2-adic: v(const) = -27;  v(part1) = 29, v(part2 rational) = 32, v(part2 theta-coefficient) = 28;  3m = 24;  v2(u_n) = 2, v2(v_n) = -1
+== 6. integrality with D_n = lcm/Phi_n and the removable-prime rule ==
+K2H(5,3,4), n in [1,60] step 1:  all zero-residue at ±sqrt2: True;  (lcm(1..Mn)/Phi_n)*u_n integer for all n: True;  2*v_n integer: True;  v_n integer: False
+   rule violations (removable prime divides denominator): 0 out of 113 predicted;  extra absent primes: 33;  primes > Mn in denominator: 0
+   max 2-adic exponent of denominator of u_n (v2den), with v2(lcm): [(1, 1, 2), (7, -2, 4), (13, -3, 5), (19, -7, 6), (25, -9, 6), (31, -12, 6), (37, -13, 7), (43, -21, 7), (49, -21, 7), (55, -25, 7)]
+K2H(4,2,3), n in [2,40] step 2:  all zero-residue at ±sqrt2: True;  (lcm(1..Mn)/Phi_n)*u_n integer for all n: True;  2*v_n integer: True;  v_n integer: True
+   rule violations (removable prime divides denominator): 0 out of 11 predicted;  extra absent primes: 11;  primes > Mn in denominator: 0
+   max 2-adic exponent of denominator of u_n (v2den), with v2(lcm): [(2, 1, 2), (6, 2, 4), (10, 2, 4), (14, 3, 5), (18, 2, 5), (22, 3, 6), (26, 3, 6), (30, 4, 6), (34, 2, 6), (38, 3, 6)]
+K2H(3,3,2), n in [1,30] step 1:  all zero-residue at ±sqrt2: True;  (lcm(1..Mn)/Phi_n)*u_n integer for all n: True;  2*v_n integer: True;  v_n integer: True
+   rule violations (removable prime divides denominator): 0 out of 126 predicted;  extra absent primes: 15;  primes > Mn in denominator: 0
+   max 2-adic exponent of denominator of u_n (v2den), with v2(lcm): [(1, -1, 2), (4, -12, 4), (7, -15, 4), (10, -21, 5), (13, -29, 5), (16, -45, 6), (19, -44, 6), (22, -53, 6), (25, -59, 6), (28, -71, 6)]
+== 7. 2-adic lemma, term by term ==
+K2H(5,3,4) n=1: violated inequalities: 0 []
+K2H(5,3,4) n=2: violated inequalities: 0 []
+K2H(5,3,4) n=3: violated inequalities: 0 []
+K2H(5,3,4) n=4: violated inequalities: 0 []
+== 7b. the w-decomposition and 2-adic levels formalised in Lean, n <= 6 ==
+OK
+== 8. contour certificates (interval arithmetic) ==
+K2H(5,3,4): saddle z1 = (1.2077099239535152437 + 0.49394723022265078338j), s = 6.530136147360159996478177
+   certified: log|f| <= -6.5301356125298433855 on [z1,1+i] and [z1,1]  (N = 4000);  excess over -s: 5.3483e-7
+K2H(4,2,3): s = 4.994003059223300212029642;  arc [z_b, 1+i]: log|f| <= -4.99400243604197643 (excess over -s: 6.232e-7);  segment [z_b, 1]: log|f| <= -5.02870447995768562
+== 9. sizes of the exact integer forms of (5,3,4) ==
+K2H(5,3,4): theory r = 10.54036, s = 6.53014, C = 3.70604, delta = 0.19823, mu = 6.044586
+    n   integral   log|v|/n   -log|J|/n   log D/n    delta_n    1+1/delta_n
+    20   True       10.3493      6.7032     3.8395    0.20183     5.9548
+    40   True       10.4362      6.5772     3.7555    0.19883     6.0294
+    60   True       10.4675      6.5675     3.8413    0.19053     6.2486
+    80   True       10.4839      6.5835     3.7751    0.19695     6.0775
+== 10. every number printed in the paper, version 3 (independent recomputation; exits non-zero on a mismatch) ==
+
+== Section 1: introduction  (t=0.0s) ==
+PASS  |pi - 355/113| = 2.667...e-7   [2.6676419e-7]
+PASS  ... = 113^(-3.20)   [3.20196]
+PASS  7345 = 65*113, 23075 = 65*355
+PASS  Table 2: u_n, v_n, D_n, Phi_n for n <= 6 (method M1)
+PASS  Phi_1 = 1, Phi_2 = 3, Phi_21 = 17*29*31
+PASS  1155 = 3*5*7*11 | 27720;  16302 = 2*3*11*13*19 | 33256080 = lcm(1..20)/7
+PASS  J_1 = (7345 pi - 23075)/2 = -0.000979691...   [-0.000979691484332]
+PASS  12 u_1 = -138450, 12 v_1 = 44070
+
+== Section 3/4: the integral, numerically (M4), and the recursion  (t=0.0s) ==
+PASS  n=1: quadrature agrees with u_n + v_n pi to 38 digits and is real   [-0.000979691]
+PASS  n=2: quadrature agrees with u_n + v_n pi to 38 digits and is real   [1.0455e-6]
+PASS  n=3: quadrature agrees with u_n + v_n pi to 38 digits and is real   [-1.22409e-9]
+PASS  J_1 = -9.7969e-4, J_2 = 1.0455e-6, J_3 = -1.2241e-9
+PASS  P_1(W) coefficients
+PASS  xi_{j,2} = j(j-2)/192
+PASS  c_1 = 3225 + 3840 + 280 = 7345
+PASS  the recursion of Section 4.2 carried through (M0) gives the same (u_n, v_n) as the moment formula (M1), n <= 30
+PASS  c_n: series coefficient (M5) = closed formula (Remark 4.9) = 2 v_n (M1), n <= 30
+PASS  A.1: A(W) coefficients
+PASS  A.1: lambda_0..lambda_8
+PASS  A.1: six terms and u_1 = 4 * (-23075/8)
+PASS  A.1: xi_{2l,m} = 2^-m C(l,m)/C(2m,m)
+
+== Section 5.2: partial fractions (M2), n = 1  (t=0.7s) ==
+PASS  Ex 5.7: polynomial part z^3 - 21 z^2 + 216 z - 1460
+PASS  Ex 5.7: a_1..a_5 = 7345, -2920, 864, -168, 16
+PASS  Ex 5.7: b_1 = b_1' = 0
+PASS  Ex 5.7: b_2, b_3, b_4
+PASS  Ex 5.7: b_k' = conjugate of b_k (sqrt2 -> -sqrt2)
+PASS  A.3: -i(G(1+i) - G(1-i)) = -23075/2 from the partial fractions
+PASS  unit identities (5.5)
+
+== Section 5.3 / A.4: removable prime, n = 2, p = 3  (t=0.7s) ==
+PASS  u_2 from partial fractions = -4338189943/14 = M1
+PASS  T_h (polynomial part of h_2)
+PASS  a_1..a_9 of h_2
+PASS  t_2 = 3*(-332772), t_5 = 3*291, a_4 = 3*(-2662176), a_7 = 3*18624; a_2, a_3 not divisible by 3
+PASS  c_2 = 3 * 65756607
+PASS  b_4, b_7 of h_2 and divisibility of the numerators by 3
+PASS  denominator of b_2 (n=2) is 1024; b_1 = 0   [(-405457325 + 293582462965/1024*sqrt2)]
+PASS  G_red' = (z-1)(z-2)/(z^2-2)^2
+PASS  T_H leading coefficients
+PASS  T_eta leading coefficients
+PASS  T_h = T_H' - 3 T_eta
+PASS  3 | c_2 and 7 | c_5 (Remark 5.10)
+
+== Section 5.4 / A.5: the coordinate w (M3)  (t=0.7s) ==
+PASS  eps relations: eps(sqrt2+1) = 1, eps^2+2eps = 1, kappa = 2 sqrt2 eps = sqrt2^3 eps, 1+eps^4 = 6 eps^2
+PASS  Ex (n=1, w): contributions to U   [['(32/3 + 0*sqrt2)', '(1280/3 + 0*sqrt2)', '(10240 + 0*sqrt2)', '(240640/3 + 0*sqrt2)', '(281600 + 0*sqrt2)', '(1097728/3 + 0*sqrt2)']]
+PASS  Ex (n=1, w): contributions to V/eps
+PASS  Ex (n=1, w): sums 738400 and 940160
+PASS  B_{2,3} = (32/3) kappa^-3
+PASS  A.5 (i=1): B_{2,0..3} = -2/3, 4/(3k), 16/(3k^2), 32/(3k^3)
+PASS  A.5 (i=1): data of w^-2 (w^2+eps^2)^-1 and of w^-4 (w^2+eps^2)^-1
+PASS  A.5 (i=1): bracket = 352/3 - (eps^2/3)(160 + 64 sqrt2) = (128/3)(1 + sqrt2); contributions 1280/3 and 640 eps
+PASS  each term of (5.8) contributes rational numbers to u_n and c_n; its c-part is that of (-1)^(n-i) C(5n,i) (W-2)^(3n+i) Y^(-4n)/z (n <= 3)
+PASS  n = 1: c_1 = 0 + 5 + 100 + 800 + 2800 + 3640   [[mpq(0,1), mpq(5,1), mpq(100,1), mpq(800,1), mpq(2800,1), mpq(3640,1)]]
+PASS  w-coordinate: u_n, c_n agree with M1 and levels (5.9) hold, n <= 6
+PASS  level of V minus 14n for n = 1..6 is 0,0,0,0,2,0 (attained except for n = 5, where c_5 is even)   [[0, 0, 0, 0, 2, 0]]
+PASS  Lemma (atoms): levels a+2-2 s_2(a) and 4-k, m <= 8, a < 40, k <= 12
+PASS  beta_j = C(2j,j)/(4 eps^2)^j
+PASS  2 s_2(a) <= a+1 and s_2(a) <= floor(log2 a)+1 for 1 <= a < 5000; Legendre; Kummer
+PASS  theta = (2/eps) arctan(1/eps) = 3 pi/(4 eps)
+
+== Section 6: growth  (t=0.7s) ==
+PASS  8.9 < log 7345   [8.9017751]
+PASS  f(-0.3913) = 37810.99167... < 37811 (exact rational)   [37810.9916791]
+PASS  e^10.540357 >= 2.7182818283^10 * sum_{i<=9} 0.540357^i/i! = 22026.4657.. x 1.7166195.. = 37811.0625.. > 37811   [37811.062558]
+PASS  real critical point W = -5.5028..., x_0 = 0.3912692430..., lambda_3 = 37810.99119500591..., log = 10.5403551116...   [0.39126924304597 37810.9911950059137 10.540355111696]
+PASS  lambda_3 is a root of 2^20 L^3 - 39647694848 L^2 - 115523712 L - 3^3 5^5
+PASS  log v_n - n log lambda_3 + (1/2) log n = -2.3230, -2.3229 for n = 200, 400   [-2.32296 -2.322939]
+
+== Section 7 / A.7: decay, the polygon, the certificates  (t=0.9s) ==
+PASS  max of |f| on the segment: e^-6.0709... at y = 0.5428...   [-6.0709274 at 0.54285992]
+PASS  z_s = 1.20770... + 0.49394... i
+PASS  the four saddle points are z_1, conj z_1, 2/z_1, 2/conj z_1 (grey square of Fig. 1: 2/conj z_1 = 1.4187 + 0.5802 i)
+PASS  saddle: W = 2.62641... +- 0.08629... i, z_1 = 1.20770992... + 0.49394723... i   [(1.20770992395 + 0.493947230223j)]
+PASS  |f(z_1)| = e^-6.53013614... = 0.00145880722...   [6.5301361473602]
+PASS  |z_s - z_1| < 1e-5; rho/|f(z_1)| - 1 = 1.2e-6; rho^2 - |f(z_s)|^2 = 5.2e-12   [8.82e-6 1.218e-6 5.184e-12]
+PASS  f(z_1), conj: roots of the cubic of critical values; modulus e^-s, argument 0.98363 pi; -0.00145687795 +- 0.00007500089 i   [(-0.00145687795686 + 7.50008945038e-5j)]
+PASS  s = (r + 20 log 2 - 3 log 3 - 5 log 5)/2
+PASS  degrees: Num 32, Den 24, Q 32
+PASS  segment 1: all 33 Bernstein coefficients on [0,1] positive; beta_0 = rho^2 = 2.128..e-6; min = beta_32 = 7.5..e-10   [min 7.548e-10]
+PASS  segment 2 on [0,1]: exactly one negative coefficient, beta_1 = -1.0..e-8   [negative at [1]: -1.034e-8]
+PASS  segment 2 on [0,1/2] and [1/2,1]: all positive; minima 7.5..e-10 and 5.4..e-3   [7.548e-10 0.005454]
+PASS  Den(z=1) = 1, Q(1) on segment 1 = Q(0) on segment 2 (the point z_s)
+PASS  the 99 coefficients of ContourCert.lean coincide with the recomputed ones (../lean/MuPi/K2H/ContourCert.lean)   [{'seg1_0': 0, 'seg2_0': 0, 'seg2_1': 0}]
+PASS  A.7: Taylor bound <= 1.69915999;  2.7182818286^6 = 403.42879...;  product < 685.49007 < 1/rho = 685.49069...   [taylor=1.6991599808 e6=403.428793618 prod=685.49006493]
+PASS  rho < e^-6.530134 (direct)   [-6.53013492959]
+PASS  lengths 0.5358..., 0.5470...; crude bounds < 0.71, < 0.72; 2(l1+l2) < 2.17
+PASS  |J_1| = 0.00098, 4 rho = 0.0058
+PASS  Figure 2: sample points of both curves
+
+== Section 8 / A.8: the multiplier  (t=0.9s) ==
+PASS  varpi = 0.2323735360... + 0.0615863632... = 0.29395989921603919...   [0.2939598992160391902331]
+PASS  the two series sum to varpi
+PASS  varpi_K (K = 10^5) = 0.29395856588...; varpi - varpi_K < 1.4e-6, about 2/(15K)   [0.29395856588307]
+PASS  head (20 + 19 terms) = 0.28730270... (exact)   [0.287302709637]
+PASS  telescoping minorants for 20 <= x < 4000; constants 2.86.., 4.92..
+PASS  lower bound 0.2939576... >= 0.293957   [0.2939576731]
+PASS  Lemma 8.1 (windows) for all n < 400 and all primes p < 6n+10 with p^2 > 4n
+PASS  n = 21: removable primes 17, 29, 31; windows (28,31.5], (16.8,17.5], (12,12.6]
+PASS  (1/n) log D_n = 3.70706, 3.70527, 3.70614, 3.70641 for n = 10^4..10^7 (rounded to 5 decimals)   [['3.70705606', '3.70526779', '3.70614460', '3.70640660']]
+
+== Section 9: the final arithmetic and the exact rates  (t=1.2s) ==
+PASS  10.540357 + (4 - 0.293957) = 14.2464;  6.530134 - 3.706043 = 2.824091
+PASS  2.824091 * 5.0446 = 14.2464094586 > 14.2464;  2.82409 * 5.0446 = 14.246404414 > 14.2464
+PASS  1 + 14.2464/2.824091 = 6.04459665... < 6.0446
+PASS  exact rates: r = 10.5403551..., s = 6.5301361..., C = 3.7060401...; r+C = 14.2463952124..., s-C = 2.8240960465...   [14.24639521248 2.8240960465762]
+PASS  1 + (r+C)/(s-C) = 6.04458594096...   [6.044585940960423]
+PASS  with D_n itself: sigma <= 14.246398, tau >= 2.824093
+PASS  without removable primes: 6.7469; without moving the path: 7.0241   [6.746867 7.024133]
+PASS  budget table: (s-C)/(r+C) = 0.19823 -> 6.0446
+PASS  Example 9.1: the integer forms D_n J_n for n = 1, 2, 3; 390 (113 pi - 355)
+
+== Section 11: Table 7 and the integrality checks  (t=1.2s) ==
+PASS  Table 7 (rates and signs), n in (1, 5, 10, 20, 50, 100, 200, 400)   [1:ok 5:ok 10:ok 20:ok 50:ok 100:ok 200:ok 400:ok]
+PASS  D_n u_n, D_n v_n integers for n <= 300
+PASS  no removable prime divides the denominator of u_n, n <= 300
+PASS  2^floor(log2 4n) u_n has odd denominator, n <= 300
+PASS  c_n is a positive integer, n <= 300
+PASS  sign of J_n alternates for n <= 420 except at n = 18, 78, 139, 200, 261, 322, 383   [[18, 78, 139, 200, 261, 322, 383]]
+PASS  Prop 5.6: p^floor(log_p 4n) u_n is p-integral for odd p <= 4n, n <= 120
+
+== Appendices B-D (not part of the proof)  (t=13.9s) ==
+PASS  App. B table, triple (46, 28, 37): r, s, C, bound   [r=97.467001 C=34.149399 s-candidates=['60.277784', '60.277784', '60.277784', '60.277784']]
+PASS  App. B table, triple (36, 22, 29): r, s, C, bound   [r=76.386289 C=26.745061 s-candidates=['47.217263', '47.217263', '47.217263', '47.217263']]
+PASS  App. B table, triple (41, 25, 33): r, s, C, bound   [r=86.926645 C=30.448041 s-candidates=['53.747539', '53.747539', '53.747539', '53.747539']]
+PASS  App. B table, triple (5, 3, 4): r, s, C, bound   [r=10.540355 C=3.7060401 s-candidates=['6.5301361', '6.5301361', '6.5301361', '6.5301361']]
+PASS  App. B table, triple (16, 10, 13): r, s, C, bound   [r=34.224862 C=11.944631 s-candidates=['21.095307', '21.095307', '21.095307', '21.095307']]
+PASS  App. B table, triple (6, 4, 5): r, s, C, bound   [r=13.144131 C=4.5518097 s-candidates=['8.0309692', '8.0309692', '8.0309692', '8.0309692']]
+PASS  App. B table, triple (4, 2, 3): r, s, C, bound   [r=7.9364908 C=2.8742517 s-candidates=['4.9940031', '4.9940031', '5.0287048', '5.0287048']]
+PASS  App. B table, triple (3, 3, 2): r, s, C, bound   [r=9.1289874 C=2.4849027 s-candidates=['4.3878191', '4.3878191', '4.3878191', '4.3878191']]
+PASS  (5,3,4): S = [1/5,1/4) u [2/3,3/4) per period, varpi as in Section 8
+PASS  general critical cubic gives 4W^3+W^2-88W+152 for (5,3,4), 3W^3+W^2-66W+112 for (4,2,3), 4W^3-5W^2-60W+120 for (3,3,2)
+PASS  (4,2,3): r = Xi - (3/2) log 3 = 7.9364908182..., s = Xi - 9 log 2 + (3/2) log 3 = 4.9940030592...
+PASS  (4,2,3): the relevant critical point lies on |z| = sqrt2
+PASS  (4,2,3): S in [0,2) = [1/4,1/3) u [3/2,5/3), varpi = 0.1257483125..., bounds 6.1000049580..., 6.4846910929...   [[(mpq(1,4), mpq(1,3)), (mpq(3,2), mpq(5,3))] 0.125748312518]
+PASS  (3,3,2): varpi = 1.1685237..., C = 2.4849026..., r+C = 11.613890045331..., s-C = 1.902916485599..., bound 7.1032053341370017275057734228...   [7.103205334137001727505773422810308]
+PASS  (3,3,2): S = [1/3,1/2) per period
+PASS  intro: Zeilberger-Zudilin sigma = 11.6138..., tau = 1.9029...
+PASS  App. C: I_n/J_n = 4/3, 16/5, 160/21, 1792/99, 6144/143, 22528/221 to 50 digits (n <= 6)
+PASS  rational factors grow roughly like (64/27)^n: ratio of consecutive factors -> 2.37   [2.372549019607843]
+PASS  App. C: the identity f(W) - (27/64) g(25-10W) = (...)^2 (...) / (32 W^3 (W^2-8))
+PASS  App. C: cubic of critical values of f_{3,3,2}: 512 L^3 - 4719978 L^2 + 116694 L - 729   [-64]
+PASS  App. C: ... becomes 108 N^3 - 2359989 N^2 + 138304 N - 2048 under N = (64/27) L   [729/2048]
+PASS  App. B: resultant for (5,3,4) is a constant multiple of 2^20 L^3 - 39647694848 L^2 - 115523712 L - 3^3 5^5   [-64]
+PASS  product of the three critical values = 3^3 5^5 / 2^20
+PASS  App. D: nu = 5.8901... for (5,3,4) and 5.7596... for (6,4,5)   [5.8901459 5.7596231]
+PASS  App. B: q = (z-1-i)/(z-1+i) sends 0, 1, 2, +-sqrt2 to i, -1, -i, -+e^{i pi/4}
+PASS  1/(1-0.98363) = 61
+
+132 checks, 0 failed  (15 s; gmpy2=True, flint=True)
+== 11. the numbers added in version 4 (exits non-zero on a mismatch) ==
+
+== rates -> exponents (Section 1.2)  (t=0.0s) ==
+PASS  ZZ: 1 + 11.6138/1.9029 = 7.1032...   [7.103210889]
+PASS  ours: 1 + 14.2464/2.82409 < 6.0446   [6.044598437]
+PASS  sigma larger, tau larger than ZZ
+PASS  previous improvement 7.1032 -> 7.1019 lowered the bound by 0.0013   [0.0013425]
+PASS  the step from 7.1019 to 6.0446 is about 800 times larger (exact differences and printed numbers)   [('787.53', '813.31')]
+PASS  Table 3 exact column: r, s, C (12 decimals), sigma, tau (10), 1+sigma/tau (8) are truncations of the exact values   [[('10.540355111696', '10.540355111696'), ('6.53013614736', '6.53013614736'), ('3.706040100783', '3.706040100783'), ('14.2463952124', '14.2463952124'), ('2.8240960465', '2.8240960465'), ('6.04458594', '6.04458594')]]
+PASS  Table 3 recomputes at the printed precision: r+C -> sigma, s-C -> tau, 1+sigma/tau -> mu
+PASS  Remark 9.1: 1 + 14.2463952124/2.8240960465 = 6.04458594..., as in Table 3
+PASS  Figure 1: |z_s| < sqrt2 < |2/z_1|; 2/conj(z_1) = 1.4187 + 0.5802 i (upper square), 2/z_1 = 1.4187 - 0.5802 i   [('1.3048', '1.5328')]
+
+== multiplier lcm(1..4n) without removable primes (Section 1.3)  (t=0.0s) ==
+PASS  1 + (r+4)/(s-4) = 6.747 (exact rates)   [6.746866779]
+PASS  1 + (r+4)/(s-4) = 6.747 (proved bounds for r, s)   [6.7468723]
+
+== n = 1 for three members of the family (Remark 1.7), exact  (t=0.0s) ==
+PASS  J_1(2, 2, 2) = -77 + 49/2 pi = 49/2 (pi - 22/7)   [|diff| = 5.72e-247]
+PASS  J_1(2, 2, 2) printed as -0.030979... (truncation)
+PASS  J_1(3, 3, 2) = -2818 + 897 pi = 897 (pi - 2818/897)   [|diff| = 9.15e-246]
+PASS  J_1(3, 3, 2) printed as 0.0086102... (truncation)
+PASS  J_1(5, 3, 4) = -23075/2 + 7345/2 pi = 7345/2 (pi - 355/113)   [|diff| = 9.15e-246]
+PASS  J_1(5, 3, 4) printed as -0.00097969... (truncation)
+PASS  355/113 = 3.14159292...
+PASS  355/113 correct to 6 decimals (pi = 3.141592|65..., 355/113 = 3.141592|92...)
+PASS  no fraction with denominator < 16604 is closer to pi than 355/113   [(52163, 16604)]
+PASS  no fraction with denominator < 57 is closer to pi than 22/7 (other than 22/7 itself)   [(179, 57)]
+PASS  Dalzell: int_0^1 x^4(1-x)^4/(1+x^2) dx = 22/7 - pi
+PASS  Lucas: int_0^1 x^8(1-x)^8(25+816x^2)/(3164(1+x^2)) dx = 355/113 - pi
+PASS  log(1/rho) = 6.53..., r + log(1/rho) = 17.07 with the exact r (so about e^{-17n})   [17.0705]
+PASS  proved part: r > 8.9 and -log(rho) > 6.53 give r - log(rho) > 15.43 > 15.4 (error < e^{-15.4n} for large n)   [15.4301]
+PASS  -u_2/v_2 = 4338189943/1380888747, which differs from pi by 1.05...e-14 (truncated)   [-1.0599731e-14]
+
+== W and Y (Section 3.2)  (t=0.6s) ==
+
+== where pi comes from (Section 4.1)  (t=0.6s) ==
+PASS  -i * int_{1-i}^{1+i} dz/z = pi/2   [(1.57079632679 + 0.0j)]
+PASS  Log(1+i) - Log(1-i) = i pi/2
+
+== partial fractions example (Remark 4.4)  (t=0.6s) ==
+PASS  1/(z(z^2-2)) = -(1/2)/z + (1/4)/(z-sqrt2) + (1/4)/(z+sqrt2)   [1/(4*(z + sqrt(2))) + 1/(4*(z - sqrt(2))) - 1/(2*z)]
+
+== two instances of (4.5) (Appendix A.1)  (t=0.6s) ==
+PASS  (W/Y)' = -8/(z Y^2)
+PASS  1/(z Y^2) = z/(z^2-2)^2
+PASS  -i int_{1-i}^{1+i} dz/(z Y^2) = 1/4   [1/4]
+PASS  X_2^(1) = (1/8)[2 X_2^(0) - (W^3/Y)']
+PASS  X_2^(0) = W^2/z = z + 4/z + 4/z^3
+PASS  residue of X_2^(1) at 0 is 1
+PASS  X_2^(1) = 1/z + G' with G = (1/4)(z^2/2 - 2/z^2) - (1/8) W^3/Y
+PASS  G(1+i) = i, G(1-i) = -i for the second instance
+PASS  -i int_{1-i}^{1+i} W^2/(z Y^2) dz = pi/2 + 2   [(3.5707963267949 + 0.0j)]
+
+== Figure 2: |J_n| and v_n for n <= 60  (t=0.8s) ==
+PASS  c_n is a positive integer, n <= 60
+PASS  c_1 = 7345, c_2 = 197269821
+PASS  J_1 = -9.7969e-4, J_2 = 1.0455e-6, J_3 = -1.2241e-9 (polygon quadrature)
+PASS  |J_n| <= 4 rho^n for n <= 60
+(audit_numeric/results.jsonl not found; comparison skipped)
+PASS  Figure 2 caption: for every plotted n (n <= 60), |J_n| < 10^{-7n} |u_n| (u_n and -v_n pi agree to more than 7n digits)   [7.0710224]
+PASS  signs of J_n alternate for n <= 60 except J_17, J_18 (first break at n = 18)   [[18]]
+PASS  largest dip below the bound line (n <= 60) at n = 17   [-2.823]
+PASS  slopes of Figure 2 (n = 30..60) close to r/ln10 = 4.578 and -s/ln10 = -2.836   [('4.5726', '-2.8374')]
+PASS  Figure 2: log10(rho) = -2.836..., r/log10 = 4.58 (rounded), labels 'slope ~ 4.6' and '~ -2.8'
+
+47 checks, 0 failed  (14.3s)
+ALL STEPS RAN
+PYTHON=python3 zsh verify_k2h.sh  42.88s user 2.82s system 119% cpu 38.222 total
